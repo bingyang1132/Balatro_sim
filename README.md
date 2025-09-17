@@ -5,12 +5,12 @@
 ## 简介 · Overview
 
 * **这是什么 | What is this**
-  一组用于 *[小丑牌](https://baike.baidu.com/item/%E5%B0%8F%E4%B8%91%E7%89%8C/65126743)* 的**解析概率**与**最优弃牌策略**模拟脚本，支持多牌型、多轮弃牌、52 张与去人头 40 张牌组。
+  一组用于 *[小丑牌](https://baike.baidu.com/item/%E5%B0%8F%E4%B8%91%E7%89%8C/65126743)* 的**解析概率**与**最优弃牌策略**模拟脚本，支持多牌型、多轮弃牌、52 张（标准卡组）与去掉J、Q、K的 40 张牌组（废弃卡组）。
   A set of scripts for *[Balatro](https://en.wikipedia.org/wiki/Balatro)* that use **closed-form combinatorics** and an **optimal per-round discard planner**, supporting multi-type, multi-round discards for both 52-card and face-less 40-card decks.
 
 * **核心思路 | Core idea**
-  内层用精确概率（超几何 + 按点数 DP + 包含–排除）评估“本轮弃牌 k 张后立刻成型”的概率，选择最优方案；外层通过模拟统计“第 t 轮达成”的成功率。
-  The inner planner computes **exact** “succeed after discarding k now” probabilities (hypergeometric + rank-DP + inclusion–exclusion), then chooses the best plan; the outer loop simulates trials to measure success at round *t*.
+  内层用概率（超几何 + 按点数 DP + 包含–排除）评估“本轮弃牌 k 张后立刻成型”的概率，选择最优方案；外层通过模拟统计“第 t 轮达成”的成功率。
+  The inner planner computes “succeed after discarding k now” probabilities (hypergeometric + rank-DP + inclusion–exclusion), then chooses the best plan; the outer loop simulates trials to measure success at round *t*.
 
 ---
 
